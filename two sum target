@@ -1,0 +1,15 @@
+nums = [2, 7, 11, 15]
+target = 9
+
+def twoSum(nums, target):
+    seen = {}
+    i = 0
+    while i < len(nums):
+        other = target - nums[i]
+        if other in seen:
+            return [seen[other], i]
+        seen[nums[i]] = i
+        i += 1
+    return []
+
+print(twoSum(nums, target)) 
