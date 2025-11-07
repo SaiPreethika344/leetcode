@@ -1,0 +1,12 @@
+nums = [2, 2, 1, 2, 3, 2]  
+count = 0
+winner = None
+for number in nums:
+    if count == 0:
+        winner = number
+    if number == winner:
+        count += 1
+    else:
+        count -= 1
+
+print("Majority Element is:", winner)
