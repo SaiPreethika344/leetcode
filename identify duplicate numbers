@@ -1,0 +1,10 @@
+def contains_duplicate(nums):
+    seen = set()
+
+    for n in nums:
+        if n in seen:
+            return True
+        seen.add(n)
+    return False
+nums = list(map(int, input("Enter numbers with space: ").split()))
+print(contains_duplicate(nums))
