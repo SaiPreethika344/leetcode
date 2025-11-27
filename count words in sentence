@@ -1,0 +1,13 @@
+def count_words(sentence):
+    cleaned = sentence.strip()
+    if cleaned == "":
+        return 0
+    parts = cleaned.split(" ")
+    count = 0
+    for word in parts:
+        if word != "":
+            count = count + 1
+    return count
+text = str(input("Enter:"))
+result = count_words(text)
+print("Number of words:", result)
