@@ -1,0 +1,11 @@
+numbers = list(map(int, input("Enter numbers: ").split()))
+target = int(input("Enter number to search: "))
+
+index = -1
+
+for i in range(len(numbers)):
+    if numbers[i] == target:
+        index = i
+        break
+
+print("Index =", index)
