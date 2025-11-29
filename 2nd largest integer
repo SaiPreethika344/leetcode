@@ -1,0 +1,10 @@
+numbers = list(map(int, input("Enter numbers: ").split()))
+
+largest = max(numbers)
+second_largest = -10**9
+
+for num in numbers:
+    if num != largest and num > second_largest:
+        second_largest = num
+
+print("Second largest number:", second_largest)
