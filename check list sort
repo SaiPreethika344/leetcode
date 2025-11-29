@@ -1,0 +1,12 @@
+numbers = list(map(int, input("Enter numbers: ").split()))
+sorted_flag = True
+
+for i in range(len(numbers) - 1):
+    if numbers[i] > numbers[i + 1]:
+        sorted_flag = False
+        break
+
+if sorted_flag:
+    print("List is sorted")
+else:
+    print("List is not sorted")
