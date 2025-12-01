@@ -1,0 +1,29 @@
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
+
+def reverse_list(head):
+    prev = None
+    curr = head
+
+    while curr is not None:
+        next_node = curr.next    
+        curr.next = prev          
+        prev = curr              
+        curr = next_node          
+
+    return prev  
+values = list(map(int, input("Enter values: ").split()))
+head = Node(values[0])
+temp = head
+
+for v in values[1:]:
+    temp.next = Node(v)
+    temp = temp.next
+new_head = reverse_list(head)
+temp = new_head
+while temp:
+    print(temp.data, end=" ")
+    temp = temp.next
