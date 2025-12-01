@@ -1,0 +1,39 @@
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+def merge_lists(l1, l2):
+    dummy = Node(0)
+    tail = dummy
+
+    while l1 and l2:
+        if l1.data < l2.data:
+            tail.next = l1
+            l1 = l1.next
+        else:
+            tail.next = l2
+            l2 = l2.next
+        tail = tail.next
+    if l1:
+        tail.next = l1
+    if l2:
+        tail.next = l2
+
+    return dummy.next
+values1 = list(map(int, input("Enter first sorted list: ").split()))
+l1 = Node(values1[0])
+temp = l1
+for v in values1[1:]:
+    temp.next = Node(v)
+    temp = temp.next
+values2 = list(map(int, input("Enter second sorted list: ").split()))
+l2 = Node(values2[0])
+temp = l2
+for v in values2[1:]:
+    temp.next = Node(v)
+    temp = temp.next
+merged_head = merge_lists(l1, l2)
+temp = merged_head
+while temp:
+    print(temp.data, end=" ")
+    temp = temp.next
