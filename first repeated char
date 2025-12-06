@@ -1,0 +1,10 @@
+def first_repeated(s):
+    seen = set()
+    for ch in s:
+        if ch in seen:
+            return ch
+        seen.add(ch)
+    return "No repeat"
+
+s = "preethika"
+print(first_repeated(s))
