@@ -1,0 +1,10 @@
+def remove_vowels(s):
+    v = "aeiouAEIOU"
+    ans = ""
+    for ch in s:
+        if ch not in v:
+            ans += ch
+    return ans
+
+s = "Hello World"
+print(remove_vowels(s))
